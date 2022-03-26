@@ -1,0 +1,92 @@
+@use "../../sass/" as *;
+
+.about {
+  // height: 100vh;
+  &__container {
+    display: grid;
+    grid-template-columns: 35% 50%;
+    gap: 15%;
+    @include tablet {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+  }
+  &__left {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 2rem;
+    background: linear-gradient(
+      45deg,
+      transparent,
+      $color-primary,
+      transparent
+    );
+    display: grid;
+    place-items: center;
+    @include tablet {
+      width: 50%;
+      margin: 2rem auto 4rem;
+    }
+    @include mobile {
+      width: 65%;
+      margin: 0 auto 3rem;
+    }
+    &__img {
+      border-radius: 2rem;
+      overflow: hidden;
+      transform: rotate(10deg);
+      transition: $transition;
+      &:hover {
+        transform: rotate(0);
+      }
+    }
+  }
+  &__right {
+    &__list {
+      text-align: center;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      @include mobile {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      &__card {
+        padding: 2rem;
+        background-color: $color-bg-variant;
+        border: 1px solid transparent;
+        border-radius: 1rem;
+        transition: $transition;
+        @include mobile {
+          padding: 1rem;
+        }
+
+        &:hover {
+          background-color: transparent;
+          border-color: $color-bg-variant;
+          cursor: default;
+        }
+        &__icon {
+          font-size: 1.6rem;
+          margin-bottom: 0.7rem;
+          color: $color-primary;
+        }
+        &__title {
+          font-size: 0.95rem;
+          margin-bottom: 5px;
+        }
+        &__sub {
+          font-size: 0.7rem;
+          color: $color-light;
+        }
+      }
+    }
+    &__content {
+      margin: 2rem 0 2.6rem;
+      color: $color-light;
+      font-size: 0.9rem;
+      @include tablet {
+        margin: 1rem 0 1.5rem;
+      }
+    }
+  }
+}

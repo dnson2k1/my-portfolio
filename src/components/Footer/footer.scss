@@ -1,0 +1,60 @@
+@use "../../sass/" as *;
+
+.footer {
+  background-color: $color-primary;
+  margin-top: 9rem;
+  padding: 3rem 0;
+  text-align: center;
+  a {
+    color: $color-bg;
+  }
+  &__logo {
+    font-weight: 500;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    display: inline-block;
+  }
+  &__list,
+  &__socials {
+    @include flex(center, center);
+    gap: 2rem;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+    font-weight: 500;
+    @include mobile {
+      margin-bottom: 1.5rem;
+    }
+  }
+  &__list {
+    @include mobile {
+      flex-direction: column;
+      gap: 1.3rem;
+    }
+  }
+  &__socials {
+    font-size: 1.3rem;
+    gap: 1rem;
+    a {
+      @include flex(center, center);
+      background-color: $color-bg;
+      color: $color-white;
+      border: 1px solid transparent;
+      padding: 0.7rem;
+      border-radius: 0.5rem;
+      transition: $transition;
+      &:hover {
+        background-color: transparent;
+        border: 1px solid $color-bg;
+        color: $color-bg;
+      }
+    }
+  }
+  &__copyright {
+    margin-bottom: 4rem;
+    color: $color-bg;
+    // @include mobile {
+    //   margin-bottom: 2rem;
+    // }
+  }
+}

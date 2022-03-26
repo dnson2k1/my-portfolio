@@ -1,0 +1,39 @@
+@use "../../sass/" as *;
+
+.portfolio {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.7rem;
+    }
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: 1.4rem;
+    }
+  }
+  &__item {
+    background-color: $color-bg-variant;
+    border: 1px solid transparent;
+    padding: 1rem;
+    border-radius: 1rem;
+    transition: $transition;
+    &:hover {
+      background-color: transparent;
+      border-color: $color-bg-variant;
+    }
+    &__img {
+      border-radius: 1rem;
+      overflow: hidden;
+    }
+    h3 {
+      margin: 0.75rem;
+    }
+    &__btn {
+      @include flex(center, flex-start);
+      gap: 0 20px;
+    }
+  }
+}

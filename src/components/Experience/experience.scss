@@ -1,0 +1,58 @@
+@use "../../sass/" as *;
+
+.experience {
+  //   height: 100vh;
+  &__container {
+    display: grid;
+    grid-template-columns: 45% 45%;
+    gap: 10%;
+    @include tablet {
+      grid-template-columns: 1fr;
+      gap: 5%;
+    }
+  }
+  &__cards {
+    background-color: $color-bg-variant;
+    padding: 2rem 3rem 3rem;
+    border-radius: 1rem;
+    cursor: default;
+    transition: $transition;
+    @include mobile {
+      padding: 0.5rem 1.5rem 1.5rem;
+    }
+    &:hover {
+      background: $color-bg;
+    }
+    h2 {
+      margin-bottom: 30px;
+      text-align: center;
+      color: $color-primary;
+      font-size: 1.3rem;
+    }
+  }
+  &__skill {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    @include mobile {
+      gap: 0.8rem;
+    }
+    &__content {
+      @include flex(flex-start, flex-start);
+      gap: 0 20px;
+      @include mobile {
+        gap: 0 8px;
+      }
+      &__icon {
+        font-size: 1.2rem;
+        color: $color-primary;
+      }
+      &__info {
+        small {
+          font-size: 0.8rem;
+          color: $color-light;
+        }
+      }
+    }
+  }
+}

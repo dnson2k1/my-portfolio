@@ -1,0 +1,46 @@
+@use "../../sass/" as *;
+
+.testimonials {
+  .container.testimonials__container {
+    width: 60%;
+    padding-bottom: 3rem;
+    @include tablet {
+      width: 75%;
+    }
+    @include mobile {
+      width: 90%;
+    }
+  }
+  &__item {
+    background-color: $color-bg-variant;
+    text-align: center;
+    padding: 2rem 0;
+    border-radius: 2rem;
+    user-select: none;
+    &__avt {
+      width: 4rem;
+      aspect-ratio: 3/3;
+      overflow: hidden;
+      border-radius: 50%;
+      margin: 0 auto 1rem;
+      border: 0.4rem solid $color-primary-variant;
+    }
+    &__name {
+      margin-bottom: 5px;
+      font-size: 1.2rem;
+    }
+    &__review {
+      color: $color-light;
+      font-weight: 300;
+      width: 70%;
+      margin: 0.8rem auto 0;
+      font-size: 0.9rem;
+      @include mobile {
+        width: 90%;
+      }
+    }
+  }
+}
+.swiper-pagination-clickable .swiper-pagination-bullet {
+  background: $color-primary;
+}
